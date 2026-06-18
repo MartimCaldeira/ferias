@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0ea5a4" />
+  <meta name="description" content="Guia de férias 2026 para um grupo de 7 pessoas — Maiorca, Creta e Malta. Preços, onde reservar e dicas para agosto/setembro." />
+
+  <!-- Partilha (Open Graph) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Férias 2026 · Maiorca · Creta · Malta" />
+  <meta property="og:description" content="Guia para 7 pessoas — preços, agências fiáveis e dicas para agosto/setembro de 2026." />
+  <meta property="og:locale" content="pt_PT" />
+
+  <title>Férias 2026 · Maiorca · Creta · Malta</title>
+
+  <!-- Favicon (sol/praia, inline — sem pedidos externos) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230ea5a4'/%3E%3Ccircle cx='16' cy='13' r='6' fill='%23fde047'/%3E%3Cpath d='M3 24c3-3 6-3 9 0s6 3 9 0 6-3 8 0' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- Tipografia + ícones (carregados do CDN; degradam para fontes do sistema se offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css" />
+
+  <style>
+    /* ============ DESIGN TOKENS ============ */
+    :root {
+      --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-display: "Sora", "Inter", system-ui, sans-serif;
+
+      --border-radius-sm: 8px;
+      --border-radius-md: 12px;
+      --border-radius-lg: 18px;
+
+      /* Tema claro */
+      --page-bg: #f6f7f9;
+      --page-bg-2: #eef1f4;
+      --color-background-primary: #ffffff;       /* cartões */
+      --color-background-secondary: #f3f5f8;      /* caixas subtis */
+      --color-border-tertiary: #e4e8ee;
+      --color-text-primary: #15233b;
+      --color-text-secondary: #5b6678;
+      --shadow-sm: 0 1px 2px rgba(16, 28, 51, .05);
+      --shadow-md: 0 8px 24px -10px rgba(16, 28, 51, .18);
+      --shadow-lg: 0 24px 60px -24px rgba(16, 28, 51, .30);
+
+      /* Estados */
+      --color-background-success: #e6f6ee;  --color-text-success: #18794e;
+      --color-background-info:    #e7f0fd;  --color-text-info:    #1d5fb4;
+      --color-background-warning: #fdf0e1;  --color-text-warning: #b4540a;
+
+      /* Acentos */
+      --teal: #0ea5a4;
+      --blue: #2563eb;
+      --coral: #f97316;
+    }
+
+    html[data-theme="dark"] {
+      --page-bg: #0c1018;
+      --page-bg-2: #0a0d14;
+      --color-background-primary: #161c27;
+      --color-background-secondary: #1d2533;
+      --color-border-tertiary: #2a3342;
+      --color-text-primary: #eef2f7;
+      --color-text-secondary: #9aa6b6;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+      --shadow-md: 0 10px 28px -12px rgba(0, 0, 0, .6);
+      --shadow-lg: 0 30px 70px -30px rgba(0, 0, 0, .75);
+
+      --color-background-success: #11321f;  --color-text-success: #5fd699;
+      --color-background-info:    #122844;  --color-text-info:    #7cb2f6;
+      --color-background-warning: #3a2410;  --color-text-warning: #f0a85b;
+    }
+
+    /* ============ BASE ============ */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--color-text-primary);
+      background:
+        radial-gradient(1200px 600px at 50% -200px, var(--page-bg-2), transparent 60%),
+        var(--page-bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--font-display); letter-spacing: -.01em; line-height: 1.15; }
+    .wrap { width: 100%; max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(135deg, #0ea5a4 0%, #2563eb 48%, #f97316 115%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(900px 360px at 78% -40%, rgba(255,255,255,.30), transparent 60%);
+      pointer-events: none;
+    }
+    .hero__inner { position: relative; z-index: 1; padding: 64px 0 76px; }
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+      background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.28);
+      padding: 6px 14px; border-radius: 999px; backdrop-filter: blur(4px);
+    }
+    .hero h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      font-weight: 800;
+      text-shadow: 0 2px 30px rgba(0,0,0,.18);
+    }
+    .hero__sub { margin: 0; font-size: clamp(1rem, 2.4vw, 1.25rem); max-width: 46ch; opacity: .95; }
+    .hero__meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28);
+      padding: 8px 14px; border-radius: 999px; font-weight: 500; font-size: 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* botão tema */
+    .theme-toggle {
+      position: absolute; top: 18px; right: 0; z-index: 2;
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.16);
+      color: #fff; cursor: pointer; font-size: 20px; line-height: 1;
+      display: grid; place-items: center; transition: background .2s, transform .2s;
+      backdrop-filter: blur(4px);
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,.30); transform: rotate(-15deg); }
+
+    /* ============ NAV STICKY ============ */
+    .subnav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--color-background-primary) 88%, transparent);
+      backdrop-filter: saturate(1.5) blur(12px);
+      border-bottom: 1px solid var(--color-border-tertiary);
+      box-shadow: 0 10px 24px -16px rgba(16, 28, 51, .5);
+    }
+    /* fio de gradiente no topo — liga visualmente a barra ao hero */
+    .subnav::before {
+      content: ""; display: block; height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--blue) 55%, var(--coral));
+    }
+    .subnav__inner {
+      display: flex; gap: 4px; justify-content: safe center; flex-wrap: nowrap;
+      overflow-x: auto; padding: 9px 0; scrollbar-width: none;
+    }
+    .subnav__inner::-webkit-scrollbar { display: none; }
+    .subnav a {
+      flex: 0 0 auto;
+      text-decoration: none; font-weight: 600; font-size: 14px;
+      color: var(--color-text-secondary);
+      padding: 8px 16px; border-radius: 999px; white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .subnav a:hover { background: var(--color-background-secondary); color: var(--color-text-primary); }
+    .subnav a.active { background: var(--teal); color: #fff; box-shadow: 0 4px 12px -4px var(--teal); }
+
+    /* ============ LAYOUT SECÇÕES ============ */
+    main { padding: 40px 0 24px; }
+    section { scroll-margin-top: 72px; margin-bottom: 14px; }
+    .section-title {
+      font-size: 13px; font-weight: 700; color: var(--color-text-secondary);
+      text-transform: uppercase; letter-spacing: .08em; margin: 34px 0 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title:first-of-type { margin-top: 0; }
+
+    /* ============ CARTÕES ============ */
+    .card {
+      background: var(--color-background-primary);
+      border: 1px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: box-shadow .25s ease, transform .25s ease;
+    }
+    .card--hover:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    .start-card { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .start-card .ico {
+      width: 52px; height: 52px; border-radius: 14px; flex: 0 0 auto;
+      display: grid; place-items: center; font-size: 26px;
+      background: var(--color-background-secondary);
+    }
+
+    /* destino: cabeçalho com banda colorida */
+    .dest { padding: 0; overflow: hidden; }
+    .dest__cover {
+      position: relative; padding: 22px 22px 18px; color: #fff;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      min-height: 120px;
+    }
+    .dest__cover::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(600px 200px at 85% -30%, rgba(255,255,255,.35), transparent 60%);
+    }
+    .dest--maiorca .dest__cover { background: linear-gradient(135deg, #0d9488, #22d3ee); }
+    .dest--creta   .dest__cover { background: linear-gradient(135deg, #1e40af, #38bdf8); }
+    .dest--malta   .dest__cover { background: linear-gradient(135deg, #ea580c, #f59e0b); }
+    .dest__cover > * { position: relative; }
+    .dest__name { margin: 0; font-size: 1.7rem; font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.22); }
+    .dest__sub  { margin: 6px 0 0; font-size: 14px; opacity: .96; max-width: 42ch; }
+    .dest__flag { font-size: 40px; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
+    .dest__body { padding: 18px 22px 22px; }
+
+    /* badges */
+    .badge {
+      font-size: 11.5px; padding: 4px 11px; border-radius: 999px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+    }
+    .badge-top  { background: var(--color-background-success); color: var(--color-text-success); }
+    .badge-mid  { background: var(--color-background-info);    color: var(--color-text-info); }
+    .badge-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+    .badge-onlight {
+      background: rgba(255,255,255,.22); color: #fff; border: 1px solid rgba(255,255,255,.4);
+    }
+
+    /* preços */
+    .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 4px 0 12px; }
+    .stat {
+      background: var(--color-background-secondary);
+      border: 1px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-md); padding: 12px 14px;
+    }
+    .stat .label { font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px; }
+    .stat .price-big { font-size: 1.4rem; font-weight: 700; margin: 0; font-family: var(--font-display); }
+    .note { font-size: 13.5px; color: var(--color-text-secondary); margin: 0 0 4px; }
+
+    hr { border: none; border-top: 1px solid var(--color-border-tertiary); margin: 16px 0; }
+
+    .book-title { font-size: 13px; font-weight: 700; margin: 0 0 8px; }
+    .links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+    .link-btn {
+      font-size: 13.5px; color: var(--color-text-info); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 7px; font-weight: 500;
+      padding: 2px 0; transition: color .15s, gap .15s;
+    }
+    .link-btn:hover { color: var(--color-text-primary); gap: 10px; }
+    .link-btn i { font-size: 15px; opacity: .8; }
+
+    .tip-box {
+      background: var(--color-background-secondary);
+      border: 1px solid var(--color-border-tertiary);
+      border-left: 3px solid var(--teal);
+      border-radius: var(--border-radius-md);
+      padding: 12px 15px; font-size: 13.5px; color: var(--color-text-secondary);
+      margin-top: 14px; display: flex; gap: 10px;
+    }
+    .tip-box i { color: var(--teal); font-size: 17px; flex: 0 0 auto; margin-top: 1px; }
+
+    /* grelha de agências */
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .agency .ag-head { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14.5px; margin: 0 0 6px; }
+    .agency p.desc { font-size: 13.5px; color: var(--color-text-secondary); margin: 0; }
+    .agency i { font-size: 18px; }
+
+    /* recomendação final */
+    .final {
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--teal) 12%, var(--color-background-primary)), var(--color-background-primary));
+      border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--color-border-tertiary));
+    }
+    .final .ag-head i { color: var(--coral); }
+    .final strong { color: var(--color-text-primary); }
+
+    /* ============ FOOTER ============ */
+    footer {
+      margin-top: 36px; padding: 28px 0 48px;
+      border-top: 1px solid var(--color-border-tertiary);
+      color: var(--color-text-secondary); font-size: 13px;
+    }
+    footer .foot-inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+    footer strong { color: var(--color-text-primary); }
+
+    /* ============ ANIMAÇÃO REVEAL ============ */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ============ RESPONSIVO ============ */
+    @media (max-width: 620px) {
+      .prices, .links, .grid2 { grid-template-columns: 1fr; }
+      .hero__inner { padding: 52px 0 60px; }
+      .dest__flag { font-size: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="sr-only">Guia de férias para grupo de 7 pessoas — agosto/setembro 2026</h2>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="top">
+    <div class="wrap hero__inner">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Tema claro/escuro">🌙</button>
+
+      <span class="hero__eyebrow"><i class="ti ti-plane-tilt" aria-hidden="true"></i> Plano de viagem</span>
+      <h1>Férias&nbsp;2026</h1>
+      <p class="hero__sub">Guia para um grupo de 7 pessoas — comparação de destinos, preços e onde reservar para agosto/setembro.</p>
+
+      <div class="hero__meta">
+        <span class="chip"><i class="ti ti-users" aria-hidden="true"></i> 7 pessoas</span>
+        <span class="chip"><i class="ti ti-calendar-event" aria-hidden="true"></i> Agosto–Setembro 2026</span>
+        <span class="chip"><i class="ti ti-map-pin" aria-hidden="true"></i> Saída: Almargem do Bispo</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="subnav" aria-label="Navegação da página">
+    <div class="wrap subnav__inner">
+      <a href="#top">Início</a>
+      <a href="#maiorca">Maiorca</a>
+      <a href="#creta">Creta</a>
+      <a href="#malta">Malta</a>
+      <a href="#agencias">Agências</a>
+      <a href="#recomendacao">Recomendação</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <!-- Ponto de partida -->
+    <section id="partida">
+      <p class="section-title"><i class="ti ti-car" aria-hidden="true"></i> Ponto de partida — Almargem do Bispo → Sevilha</p>
+      <div class="card start-card card--hover reveal">
+        <div class="ico">🚗</div>
+        <div>
+          <p style="font-size:1.05rem; font-weight:700; margin:0 0 4px;">~4h30 de carro</p>
+          <p class="note" style="margin:0;">460 km, A2 direto via Badajoz — sem controlo de fronteira</p>
+        </div>
+        <div style="margin-left:auto;">
+          <span class="badge badge-top"><i class="ti ti-discount" aria-hidden="true"></i> Voos mais baratos do que Lisboa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DESTINO 1 — MAIORCA ===================== -->
+    <section id="maiorca">
+      <p class="section-title"><i class="ti ti-beach" aria-hidden="true"></i> Destino 1</p>
+      <article class="card dest dest--maiorca card--hover reveal">
+        <div class="dest__cover">
+          <div>
+            <h3 class="dest__name">Maiorca</h3>
+            <p class="dest__sub">Praias cristalinas, vida noturna e interior verde — Baleares, Espanha</p>
+            <span class="badge badge-onlight" style="margin-top:10px;"><i class="ti ti-award" aria-hidden="true"></i> Melhor relação €/praia</span>
+          </div>
+          <span class="dest__flag" aria-hidden="true">🏝️</span>
+        </div>
+        <div class="dest__body">
+          <div class="prices">
+            <div class="stat">
+              <p class="label">Voo SVQ→PMI (por pessoa, i/v)</p>
+              <p class="price-big">~29–60€</p>
+            </div>
+            <div class="stat">
+              <p class="label">Pacote 5 noites / 7 pax (estimativa)</p>
+              <p class="price-big">~3.700–5.500€</p>
+            </div>
+          </div>
+          <p class="note">Vueling e Ryanair voam direto de Sevilha. Em setembro os preços baixam face a agosto.</p>
+          <hr>
+          <p class="book-title">Onde reservar (fiáveis):</p>
+          <div class="links">
+            <a class="link-btn" href="https://www.abreu.pt" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Abreu (nº1 em Portugal)</a>
+            <a class="link-btn" href="https://www.logitravel.pt/viagem/europa/espanha/maiorca/voo-hotel/" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Logitravel — Maiorca</a>
+            <a class="link-btn" href="https://www.topatlantico.pt/voos-hotel-maiorca" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Top Atlântico</a>
+            <a class="link-btn" href="https://www.edreams.pt/voo-hotel/palma-de-maiorca/" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> eDreams (comparador)</a>
+          </div>
+          <div class="tip-box"><i class="ti ti-bulb" aria-hidden="true"></i> <span>Dica: datas 29 ago→3 set ou 1–6 set costumam ser mais baratas do que a última semana de agosto.</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== DESTINO 2 — CRETA ===================== -->
+    <section id="creta">
+      <p class="section-title"><i class="ti ti-building-monument" aria-hidden="true"></i> Destino 2</p>
+      <article class="card dest dest--creta card--hover reveal">
+        <div class="dest__cover">
+          <div>
+            <h3 class="dest__name">Creta</h3>
+            <p class="dest__sub">Maior ilha grega — praias longas, história milenar e comida excelente</p>
+            <span class="badge badge-onlight" style="margin-top:10px;"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i> Praias + gastronomia</span>
+          </div>
+          <span class="dest__flag" aria-hidden="true">🏛️</span>
+        </div>
+        <div class="dest__body">
+          <div class="prices">
+            <div class="stat">
+              <p class="label">Voo LIS→HER (por pessoa, i/v)</p>
+              <p class="price-big">~120–200€</p>
+            </div>
+            <div class="stat">
+              <p class="label">Pacote 5 noites tudo-incluído / 7 pax</p>
+              <p class="price-big">~5.500–8.500€</p>
+            </div>
+          </div>
+          <p class="note">Partida de Lisboa (LIS) — voo direto TAP ou com escala. Setembro é ótimo: menos calor, praias desafogadas.</p>
+          <hr>
+          <p class="book-title">Onde reservar:</p>
+          <div class="links">
+            <a class="link-btn" href="https://www.logitravel.pt/viagem/europa/grecia/voo-hotel/" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Logitravel — Grécia</a>
+            <a class="link-btn" href="https://www.travelwings.pt/pacotes/ilha-de-creta-tudo-incluido-grecia" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> TravelWings — Creta TI</a>
+            <a class="link-btn" href="https://www.abreu.pt" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Abreu (orçamento de grupo)</a>
+            <a class="link-btn" href="https://www.google.com/travel/flights" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Google Flights (comparar)</a>
+          </div>
+          <div class="tip-box"><i class="ti ti-bulb" aria-hidden="true"></i> <span>Dica: a Logitravel tem pacotes com partida 31 ago→7 set e 2→9 set de Lisboa. A TravelWings tem Tudo Incluído.</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== DESTINO 3 — MALTA ===================== -->
+    <section id="malta">
+      <p class="section-title"><i class="ti ti-anchor" aria-hidden="true"></i> Destino 3</p>
+      <article class="card dest dest--malta card--hover reveal">
+        <div class="dest__cover">
+          <div>
+            <h3 class="dest__name">Malta</h3>
+            <p class="dest__sub">Ilha histórica, praias de rocha, mergulho e inglês falado em todo o lado</p>
+            <span class="badge badge-onlight" style="margin-top:10px;"><i class="ti ti-coin-euro" aria-hidden="true"></i> Mais cara, mais diferente</span>
+          </div>
+          <span class="dest__flag" aria-hidden="true">⛵</span>
+        </div>
+        <div class="dest__body">
+          <div class="prices">
+            <div class="stat">
+              <p class="label">Voo LIS→MLA (por pessoa, i/v)</p>
+              <p class="price-big">~150–250€</p>
+            </div>
+            <div class="stat">
+              <p class="label">Pacote 5 noites / 7 pax (estimativa)</p>
+              <p class="price-big">~6.500–10.000€</p>
+            </div>
+          </div>
+          <p class="note">A Logitravel começa a partir de 914€/pessoa para voo+hotel. Fica mais caro para grupos grandes.</p>
+          <hr>
+          <p class="book-title">Onde reservar:</p>
+          <div class="links">
+            <a class="link-btn" href="https://www.logitravel.pt/viagem/europa/malta/malta/voo-hotel/" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Logitravel — Malta</a>
+            <a class="link-btn" href="https://www.topatlantico.pt/voos-hotel-malta" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Top Atlântico — Malta</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== AGÊNCIAS ===================== -->
+    <section id="agencias">
+      <p class="section-title"><i class="ti ti-trophy" aria-hidden="true"></i> Credibilidade das agências</p>
+      <div class="grid2">
+        <div class="card agency card--hover reveal">
+          <p class="ag-head"><i class="ti ti-shield-check" aria-hidden="true" style="color:var(--color-text-success)"></i> Abreu</p>
+          <p class="desc">Fundada em 1840. Nº1 de reputação em Portugal. +120 lojas físicas. Ideal para grupos.</p>
+        </div>
+        <div class="card agency card--hover reveal">
+          <p class="ag-head"><i class="ti ti-shield-check" aria-hidden="true" style="color:var(--color-text-success)"></i> Top Atlântico</p>
+          <p class="desc">Nº3 de reputação. Agência portuguesa, boa para pacotes de praia.</p>
+        </div>
+        <div class="card agency card--hover reveal">
+          <p class="ag-head"><i class="ti ti-shield-half" aria-hidden="true" style="color:var(--color-text-warning)"></i> Logitravel</p>
+          <p class="desc">Online, líder PT/ES. Boa para comparar preços — mas confirma se a bagagem está incluída.</p>
+        </div>
+        <div class="card agency card--hover reveal">
+          <p class="ag-head"><i class="ti ti-search" aria-hidden="true" style="color:var(--color-text-info)"></i> Google Flights</p>
+          <p class="desc">Só para comparar — reserva sempre na companhia aérea ou agência conhecida.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RECOMENDAÇÃO ===================== -->
+    <section id="recomendacao">
+      <div class="card final card--hover reveal">
+        <p class="ag-head"><i class="ti ti-bulb" aria-hidden="true"></i> Recomendação final para 7 pessoas</p>
+        <p class="desc">Para grupos grandes, o ideal é ligar diretamente à <strong>Abreu</strong> e pedir orçamento de grupo — conseguem negociar tarifas especiais para 7 pax que não aparecem online. <strong>Maiorca via Sevilha</strong> é a opção mais barata. <strong>Creta</strong> é o melhor custo-benefício se quiserem algo mais autêntico.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <span><strong>Férias 2026</strong> · guia informativo para 7 pessoas</span>
+      <span>Preços estimados — confirma sempre na agência. Atualizado em junho de 2026.</span>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- Tema claro/escuro ----------
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      var saved = null;
+      try { saved = localStorage.getItem('ferias-theme'); } catch (e) {}
+      var initial = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      apply(initial);
+      btn.addEventListener('click', function () {
+        apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+      function apply(theme) {
+        root.setAttribute('data-theme', theme);
+        btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#0c1018' : '#0ea5a4');
+        try { localStorage.setItem('ferias-theme', theme); } catch (e) {}
+      }
+    })();
+
+    // ---------- Animação ao fazer scroll ----------
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+
+    // ---------- Realce do link de navegação ativo ----------
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.subnav a'));
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!('IntersectionObserver' in window) || !sections.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            if (map[e.target.id]) map[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+</body>
+</html>
