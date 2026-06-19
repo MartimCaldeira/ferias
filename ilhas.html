@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0ea5a4" />
+  <meta name="description" content="Ilhas de Espanha para 7 pessoas em setembro de 2026 — Baleares e Canárias comparadas. Tenerife é a escolha recomendada." />
+  <title>Ilhas de Espanha · Baleares & Canárias · Férias 2026</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230ea5a4'/%3E%3Ccircle cx='16' cy='13' r='6' fill='%23fde047'/%3E%3Cpath d='M3 24c3-3 6-3 9 0s6 3 9 0 6-3 8 0' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css" />
+
+  <style>
+    /* ===================== TOKENS (partilhados com index) ===================== */
+    :root{
+      --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      --font-display:"Sora","Inter",system-ui,sans-serif;
+      --radius-sm:10px; --radius-md:14px; --radius-lg:20px;
+      --page-bg:#f5f7fa; --page-bg-2:#e8edf3;
+      --surface:#ffffff; --surface-2:#f2f5f9; --surface-3:#e9eef5;
+      --border:#e3e8ef; --border-strong:#cfd7e2;
+      --fg:#15233b; --fg-2:#576074; --fg-3:#8a94a4;
+      --shadow-sm:0 1px 2px rgba(16,28,51,.06);
+      --shadow-md:0 12px 32px -14px rgba(16,28,51,.22);
+      --shadow-lg:0 32px 72px -30px rgba(16,28,51,.34);
+      --ok-bg:#e3f5ec; --ok:#0f7a47;
+      --info-bg:#e7f0fd; --info:#1d5fb4;
+      --warn-bg:#fdf0e1; --warn:#ad5208;
+      --purple-bg:#efeafc; --purple:#6d28d9;
+      --teal:#0ea5a4; --teal-ink:#0b7a79;
+      --blue:#2563eb; --blue-ink:#1d4ed8;
+      --coral:#f97316; --coral-ink:#c2570a;
+    }
+    :root[data-theme="dark"]{
+      --page-bg:#0c1018; --page-bg-2:#0a0e16;
+      --surface:#151b26; --surface-2:#1b2330; --surface-3:#222c3b;
+      --border:#293241; --border-strong:#3a4555;
+      --fg:#eef2f7; --fg-2:#9aa6b6; --fg-3:#6b7689;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+      --shadow-md:0 12px 34px -14px rgba(0,0,0,.65);
+      --shadow-lg:0 36px 84px -30px rgba(0,0,0,.8);
+      --ok-bg:#11321f; --ok:#5fd699;
+      --info-bg:#122844; --info:#7cb2f6;
+      --warn-bg:#3a2410; --warn:#f0a85b;
+      --purple-bg:#241a3d; --purple:#c4b5fd;
+      --teal-ink:#5fe3e1; --blue-ink:#9cc0ff; --coral-ink:#ffb066;
+    }
+
+    /* ===================== BASE ===================== */
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{margin:0;font-family:var(--font-sans);color:var(--fg);background:radial-gradient(1200px 620px at 50% -240px,var(--page-bg-2),transparent 62%),var(--page-bg);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    h1,h2,h3{font-family:var(--font-display);}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+    /* ===================== HERO (compacto) ===================== */
+    .ihero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(132deg,#0ea5a4 0%,#2563eb 55%,#f97316 128%);}
+    .ihero__glow{position:absolute;inset:0;background:radial-gradient(820px 340px at 84% -80%,rgba(255,255,255,.30),transparent 60%);pointer-events:none;}
+    .ihero__inner{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:46px 24px 56px;}
+    .back-link{display:inline-flex;align-items:center;gap:7px;color:#fff;text-decoration:none;font-weight:600;font-size:13.5px;opacity:.92;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:6px 13px;border-radius:999px;backdrop-filter:blur(6px);transition:background .2s;}
+    .back-link:hover{background:rgba(255,255,255,.3);}
+    .ihero h1{font-weight:800;letter-spacing:-.02em;line-height:1.06;margin:18px 0 10px;font-size:clamp(2.1rem,5.5vw,3.2rem);text-shadow:0 4px 30px rgba(0,0,0,.2);}
+    .ihero__sub{margin:0;font-size:clamp(1rem,2.2vw,1.18rem);max-width:52ch;text-shadow:0 2px 14px rgba(0,0,0,.45);}
+    .theme-toggle{position:absolute;top:22px;right:24px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.16);color:#fff;cursor:pointer;font-size:20px;line-height:1;display:grid;place-items:center;backdrop-filter:blur(6px);transition:background .2s,transform .2s;}
+    .theme-toggle:hover{background:rgba(255,255,255,.32);transform:rotate(-18deg);}
+
+    /* ===================== NAV ===================== */
+    .subnav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 86%,transparent);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--border);box-shadow:0 12px 26px -18px rgba(16,28,51,.5);}
+    .subnav__line{height:3px;background:linear-gradient(90deg,var(--teal),var(--blue) 55%,var(--coral));}
+    .subnav__inner{max-width:1000px;margin:0 auto;display:flex;gap:5px;justify-content:safe center;flex-wrap:nowrap;overflow-x:auto;padding:10px 16px;scrollbar-width:none;}
+    .subnav__inner::-webkit-scrollbar{display:none;}
+    .subnav a{flex:0 0 auto;text-decoration:none;font-weight:600;font-size:14px;color:var(--fg-2);padding:8px 15px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s;}
+    .subnav a:hover{background:var(--surface-2);color:var(--fg);}
+    .subnav a.active{background:var(--teal);color:#fff;}
+
+    /* ===================== LAYOUT ===================== */
+    main{max-width:1000px;margin:0 auto;padding:46px 24px 36px;}
+    section{scroll-margin-top:78px;}
+    .gap{margin-bottom:42px;}
+    .sec-title{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);margin:0 0 16px;}
+    .sec-title i{font-size:15px;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);}
+
+    /* ===================== DESTAQUE (Tenerife) ===================== */
+    .feat{position:relative;overflow:hidden;border:1.5px solid color-mix(in srgb,var(--teal) 45%,var(--border));box-shadow:var(--shadow-md);padding:24px 26px 26px;}
+    .feat__bar{position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#0d9488,#22d3ee);}
+    .feat__glow{position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--teal) 20%,transparent),transparent 70%);pointer-events:none;}
+    .feat__badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 13px;border-radius:999px;background:var(--ok-bg);color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);}
+    .feat h2{font-size:clamp(1.7rem,4vw,2.1rem);font-weight:800;margin:14px 0 4px;}
+    .feat__loc{font-size:13.5px;color:var(--fg-2);margin:0 0 18px;}
+    .fstats{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:16px;}
+    .fstat{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-md);padding:13px 16px;}
+    .fstat .label{font-size:12px;color:var(--fg-2);margin:0 0 4px;}
+    .fstat .val{font-size:1.2rem;font-weight:700;margin:0;font-family:var(--font-display);}
+    .ftags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+    .ftag{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--teal) 10%,transparent);color:var(--teal-ink);border:1px solid color-mix(in srgb,var(--teal) 38%,transparent);}
+    .why{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 16px;font-size:13.5px;color:var(--fg-2);display:flex;gap:11px;align-items:flex-start;}
+    .why i{color:var(--teal);font-size:18px;flex:0 0 auto;margin-top:1px;}
+    .why strong{color:var(--fg);}
+
+    /* ===================== FILTRO ===================== */
+    .filter{display:flex;gap:8px;flex-wrap:wrap;}
+    .fpill{cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--fg-2);font-weight:600;font-size:13.5px;padding:8px 16px;border-radius:999px;transition:background .15s,color .15s,border-color .15s;}
+    .fpill:hover{background:var(--surface-2);color:var(--fg);}
+    .fpill.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+
+    /* ===================== GRUPOS + GRELHA ===================== */
+    .group-title{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);margin:0 0 14px;}
+    .islands{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+    .island{padding:20px 22px;transition:box-shadow .25s,border-color .25s,transform .25s;}
+    .island:hover{box-shadow:var(--shadow-md);border-color:var(--border-strong);transform:translateY(-2px);}
+    .island--star{border-color:color-mix(in srgb,var(--teal) 40%,var(--border));}
+    .island__name{font-weight:800;font-size:1.3rem;margin:0 0 3px;display:flex;align-items:center;gap:8px;}
+    .island__star{color:#f5b301;font-size:1rem;}
+    .island__sub{font-size:13px;color:var(--fg-2);margin:0 0 12px;}
+    .itags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+    .itag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px;}
+    .itag--blue{background:var(--info-bg);color:var(--info);}
+    .itag--purple{background:var(--purple-bg);color:var(--purple);}
+    .itag--coral{background:var(--warn-bg);color:var(--warn);}
+    .itag--teal{background:var(--ok-bg);color:var(--ok);}
+    .island hr{border:none;border-top:1px solid var(--border);margin:0 0 14px;}
+    .iinfo{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin-bottom:16px;}
+    .iinfo .label{font-size:11px;color:var(--fg-3);margin:0 0 2px;text-transform:uppercase;letter-spacing:.03em;}
+    .iinfo .val{font-size:14px;font-weight:600;margin:0;}
+    .rates{display:grid;gap:8px;}
+    .rate{display:grid;grid-template-columns:62px 1fr 38px;align-items:center;gap:10px;}
+    .rate__label{font-size:12.5px;color:var(--fg-2);}
+    .rate__track{height:7px;border-radius:999px;background:var(--surface-3);overflow:hidden;}
+    .rate__fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal),#34d399);}
+    .rate__num{font-size:12.5px;font-weight:700;text-align:right;color:var(--fg-2);}
+
+    /* ===================== NOTA ===================== */
+    .note-box{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:var(--radius-md);padding:16px 18px;font-size:13.5px;color:var(--fg-2);line-height:1.6;}
+    .note-box strong{color:var(--fg);}
+
+    /* ===================== FOOTER ===================== */
+    footer{margin-top:36px;padding:28px 0 48px;border-top:1px solid var(--border);color:var(--fg-2);font-size:13px;}
+    .foot-inner{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;}
+    footer strong{color:var(--fg);}
+
+    /* ===================== REVEAL + RESPONSIVO ===================== */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:none;}
+    @media (max-width:720px){ .islands{grid-template-columns:1fr;} }
+    @media (max-width:620px){ .fstats{grid-template-columns:1fr;} .ihero__inner{padding:40px 20px 48px;} }
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} .reveal{opacity:1;transform:none;transition:none;} }
+  </style>
+</head>
+
+<body>
+  <!-- ===================== HERO ===================== -->
+  <header class="ihero" id="top">
+    <div class="ihero__glow" aria-hidden="true"></div>
+    <div class="ihero__inner">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Tema claro/escuro">🌙</button>
+      <a class="back-link" href="index.html"><i class="ti ti-arrow-left" aria-hidden="true"></i> Voltar ao início</a>
+      <h1>Ilhas de Espanha</h1>
+      <p class="ihero__sub">Baleares e Canárias comparadas para um grupo de 7 pessoas, em setembro de 2026 — voos a partir de Sevilha.</p>
+    </div>
+  </header>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="subnav" aria-label="Navegação da página">
+    <div class="subnav__line" aria-hidden="true"></div>
+    <div class="subnav__inner">
+      <a href="index.html">Início</a>
+      <a data-nav href="#destaque">Destaque</a>
+      <a data-nav href="#baleares">Baleares</a>
+      <a data-nav href="#canarias">Canárias</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== DESTAQUE — TENERIFE ===================== -->
+    <section id="destaque" class="gap">
+      <p class="sec-title"><i class="ti ti-trophy" aria-hidden="true" style="color:var(--teal-ink);"></i> Ilha em destaque — melhor para o grupo</p>
+      <div class="card feat reveal">
+        <div class="feat__bar" aria-hidden="true"></div>
+        <div class="feat__glow" aria-hidden="true"></div>
+        <span class="feat__badge"><i class="ti ti-star-filled" aria-hidden="true"></i> Escolha recomendada</span>
+        <h2>Tenerife</h2>
+        <p class="feat__loc">Canárias · Oceano Atlântico · Voo de Sevilha ~2h15</p>
+
+        <div class="fstats">
+          <div class="fstat"><p class="label">Voo SVQ→TFS (i/v por pessoa)</p><p class="val">~40–80€</p></div>
+          <div class="fstat"><p class="label">Pacote 5 noites · 7 pax (est.)</p><p class="val">~4.500–7.000€</p></div>
+          <div class="fstat"><p class="label">Temperatura setembro</p><p class="val">25–27°C</p></div>
+          <div class="fstat"><p class="label">Clima</p><p class="val">Estável o ano todo</p></div>
+        </div>
+
+        <div class="ftags">
+          <span class="ftag">Siam Park — melhor parque aquático da Europa</span>
+          <span class="ftag">Loro Parque</span>
+          <span class="ftag">Praias para todos os gostos</span>
+          <span class="ftag">Monte Teide</span>
+          <span class="ftag">Avistamento de baleias</span>
+          <span class="ftag">Perfeito para adolescentes</span>
+        </div>
+
+        <div class="why">
+          <i class="ti ti-bulb" aria-hidden="true"></i>
+          <span><strong>Porquê Tenerife?</strong> É a única ilha que tem tudo em simultâneo: praias tranquilas para os adultos, adrenalina para os miúdos de 13 anos no Siam Park, natureza espetacular no Teide, e oferta turística suficiente para 7 pessoas com gostos diferentes. O clima em setembro é quase perfeito — menos calor que agosto, mar quente, menos turistas.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FILTRO ===================== -->
+    <section class="gap">
+      <p class="sec-title"><i class="ti ti-adjustments-horizontal" aria-hidden="true" style="color:var(--blue-ink);"></i> Filtrar por arquipélago</p>
+      <div class="filter" id="filter">
+        <button class="fpill active" data-filter="todas">Todas as ilhas</button>
+        <button class="fpill" data-filter="baleares">Baleares</button>
+        <button class="fpill" data-filter="canarias">Canárias</button>
+      </div>
+    </section>
+
+    <!-- ===================== BALEARES ===================== -->
+    <section id="baleares" class="gap" data-arch="baleares">
+      <p class="group-title">Baleares — Mar Mediterrâneo</p>
+      <div class="islands">
+
+        <!-- Maiorca -->
+        <article class="card island">
+          <h3 class="island__name">Maiorca</h3>
+          <p class="island__sub">A maior e mais completa das Baleares</p>
+          <div class="itags"><span class="itag itag--blue">Famílias</span><span class="itag itag--blue">Cultura</span><span class="itag itag--blue">Praias variadas</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~29–60€</p></div>
+            <div><p class="label">Mar</p><p class="val">Mediterrâneo</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Bom</p></div>
+            <div><p class="label">Setembro</p><p class="val">23–26°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+          </div>
+        </article>
+
+        <!-- Menorca -->
+        <article class="card island">
+          <h3 class="island__name">Menorca</h3>
+          <p class="island__sub">A mais tranquila e preservada</p>
+          <div class="itags"><span class="itag itag--blue">Natureza</span><span class="itag itag--blue">Paz</span><span class="itag itag--blue">Praias virgens</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~34–70€</p></div>
+            <div><p class="label">Mar</p><p class="val">Mediterrâneo</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Razoável</p></div>
+            <div><p class="label">Setembro</p><p class="val">22–25°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:90%"></span></span><span class="rate__num">9/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:50%"></span></span><span class="rate__num">5/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+          </div>
+        </article>
+
+        <!-- Ibiza -->
+        <article class="card island">
+          <h3 class="island__name">Ibiza</h3>
+          <p class="island__sub">Vida noturna + praias espetaculares</p>
+          <div class="itags"><span class="itag itag--purple">Noite</span><span class="itag itag--purple">Praias</span><span class="itag itag--purple">Adolescentes</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~28–55€</p></div>
+            <div><p class="label">Mar</p><p class="val">Mediterrâneo</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Muito bom</p></div>
+            <div><p class="label">Setembro</p><p class="val">24–26°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:90%"></span></span><span class="rate__num">9/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:60%"></span></span><span class="rate__num">6/10</span></div>
+          </div>
+        </article>
+
+        <!-- Formentera -->
+        <article class="card island">
+          <h3 class="island__name">Formentera</h3>
+          <p class="island__sub">As praias mais belas da Europa</p>
+          <div class="itags"><span class="itag itag--coral">Casal</span><span class="itag itag--coral">Isolamento</span><span class="itag itag--coral">Luxo</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Acesso</p><p class="val">Ferry de Ibiza</p></div>
+            <div><p class="label">Mar</p><p class="val">Mediterrâneo</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Fraco</p></div>
+            <div><p class="label">Setembro</p><p class="val">24–26°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:100%"></span></span><span class="rate__num">10/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:30%"></span></span><span class="rate__num">3/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:30%"></span></span><span class="rate__num">3/10</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== CANÁRIAS ===================== -->
+    <section id="canarias" class="gap" data-arch="canarias">
+      <p class="group-title">Canárias — Oceano Atlântico (voos ~2h de Sevilha)</p>
+      <div class="islands">
+
+        <!-- Tenerife -->
+        <article class="card island island--star">
+          <h3 class="island__name">Tenerife <span class="island__star" aria-label="recomendada">★</span></h3>
+          <p class="island__sub">A mais completa das Canárias</p>
+          <div class="itags"><span class="itag itag--teal">Famílias</span><span class="itag itag--teal">Siam Park</span><span class="itag itag--teal">Teide</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~40–80€</p></div>
+            <div><p class="label">Mar</p><p class="val">Atlântico</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Excelente</p></div>
+            <div><p class="label">Setembro</p><p class="val">25–27°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:100%"></span></span><span class="rate__num">10/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+          </div>
+        </article>
+
+        <!-- Gran Canaria -->
+        <article class="card island">
+          <h3 class="island__name">Gran Canaria</h3>
+          <p class="island__sub">Praia + desportos + parques temáticos</p>
+          <div class="itags"><span class="itag itag--blue">Surf</span><span class="itag itag--blue">Dunas</span><span class="itag itag--blue">Diversidade</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~30–65€</p></div>
+            <div><p class="label">Mar</p><p class="val">Atlântico</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Muito bom</p></div>
+            <div><p class="label">Setembro</p><p class="val">24–27°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+          </div>
+        </article>
+
+        <!-- Fuerteventura -->
+        <article class="card island">
+          <h3 class="island__name">Fuerteventura</h3>
+          <p class="island__sub">As melhores praias das Canárias</p>
+          <div class="itags"><span class="itag itag--coral">Surf</span><span class="itag itag--coral">Kitesurf</span><span class="itag itag--coral">Praia pura</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~35–70€</p></div>
+            <div><p class="label">Mar</p><p class="val">Atlântico</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Bom (desportos)</p></div>
+            <div><p class="label">Setembro</p><p class="val">24–26°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:100%"></span></span><span class="rate__num">10/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:60%"></span></span><span class="rate__num">6/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:80%"></span></span><span class="rate__num">8/10</span></div>
+          </div>
+        </article>
+
+        <!-- Lanzarote -->
+        <article class="card island">
+          <h3 class="island__name">Lanzarote</h3>
+          <p class="island__sub">Paisagem vulcânica única na Europa</p>
+          <div class="itags"><span class="itag itag--coral">Vulcões</span><span class="itag itag--coral">Natureza</span><span class="itag itag--coral">Diferente</span></div>
+          <hr>
+          <div class="iinfo">
+            <div><p class="label">Voo SVQ (i/v)</p><p class="val">~35–70€</p></div>
+            <div><p class="label">Mar</p><p class="val">Atlântico</p></div>
+            <div><p class="label">Para adolescentes</p><p class="val">Razoável</p></div>
+            <div><p class="label">Setembro</p><p class="val">23–26°C</p></div>
+          </div>
+          <div class="rates">
+            <div class="rate"><span class="rate__label">Praias</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+            <div class="rate"><span class="rate__label">Atividades</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+            <div class="rate"><span class="rate__label">Preço</span><span class="rate__track"><span class="rate__fill" style="width:70%"></span></span><span class="rate__num">7/10</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== NOTA ===================== -->
+    <section>
+      <div class="note-box reveal">
+        <strong>Nota sobre as Canárias vs Baleares:</strong> Em setembro, as Canárias têm uma vantagem — o clima é mais estável e as temperaturas mais altas que nas Baleares, que já entram no outono. Para um grupo com adolescentes de 13 anos, <strong>Tenerife ganha por larga margem</strong> graças ao Siam Park, considerado o melhor parque aquático da Europa.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <span><strong>Férias 2026</strong> · ilhas de Espanha para 7 pessoas</span>
+      <span>Preços e temperaturas estimados — confirma sempre na agência. Atualizado em junho de 2026.</span>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- Tema claro/escuro ----------
+    (function () {
+      var root = document.documentElement, btn = document.getElementById('themeToggle');
+      var saved = null;
+      try { saved = localStorage.getItem('ferias-theme'); } catch (e) {}
+      apply(saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      btn.addEventListener('click', function () { apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); });
+      function apply(theme) {
+        root.setAttribute('data-theme', theme);
+        btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', theme === 'dark' ? '#0c1018' : '#0ea5a4');
+        try { localStorage.setItem('ferias-theme', theme); } catch (e) {}
+      }
+    })();
+
+    // ---------- Filtro por arquipélago ----------
+    (function () {
+      var pills = Array.prototype.slice.call(document.querySelectorAll('.fpill'));
+      var groups = Array.prototype.slice.call(document.querySelectorAll('[data-arch]'));
+      pills.forEach(function (p) {
+        p.addEventListener('click', function () {
+          pills.forEach(function (x) { x.classList.remove('active'); });
+          p.classList.add('active');
+          var f = p.getAttribute('data-filter');
+          groups.forEach(function (g) {
+            g.style.display = (f === 'todas' || g.getAttribute('data-arch') === f) ? '' : 'none';
+          });
+        });
+      });
+    })();
+
+    // ---------- Animação de entrada ----------
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (el){ el.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // ---------- Realce do link de navegação ativo ----------
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+      if (!links.length) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!('IntersectionObserver' in window) || !sections.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && map[e.target.id]) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            map[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+</body>
+</html>
